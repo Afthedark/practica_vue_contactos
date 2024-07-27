@@ -1,18 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ParqueoView from '../views/ParqueoView'
+
+import ContactoView from '../views/ContactoView'
 
 const routes = [
+
+
+  {
+    path: '/contacto',
+    name: 'contacto',
+    component: ContactoView
+  },
+
   {
     path: '/',
     name: 'home',
     component: HomeView
   },
-  {
-    path: '/parqueo',
-    name: 'parqueo',
-    component: ParqueoView
-  },
+
+ 
   {
     path: '/about',
     name: 'about',

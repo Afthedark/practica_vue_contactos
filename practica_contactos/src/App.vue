@@ -1,27 +1,32 @@
 <template>
   <nav>
     <!-- -->
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
-    <router-link to="/parqueo">Parqueo</router-link>
+    <router-link to="/contacto">Contactos</router-link>|
+    <router-link to="/about">Integrantes</router-link>|
+    <router-link to="/">Vue</router-link> 
+    
+    <!--<router-link to="/parqueo">Parqueo</router-link>|-->
+    
   </nav>
 
 
-  <div id="app">
-    <ParqueoView />
-  </div>
 
-  <!-- <router-view/> -->
+
+  <router-view/> 
 </template>
 
+
+
+
 <script>
-import ParqueoView from './views/ParqueoView.vue'
+import ContactoView from './views/ContactoView.vue'
 
 export default {
   components: {
-    ParqueoView
+    ContactoView
   }
 }
+
 </script>
 
 <style lang="scss">
