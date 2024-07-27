@@ -1,6 +1,6 @@
 # Practica contactos
 
-# Integrante:
+## Integrante:
 '''
 Luis Gonzalo Garey Tito
 '''
