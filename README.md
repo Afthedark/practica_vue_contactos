@@ -1,4 +1,4 @@
-# Practica contactos
+# Practica contactos VUE JS 3 - Diplomado usip full stack
 
 ## Integrante:
 ```
