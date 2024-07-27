@@ -1,4 +1,5 @@
-# Practica contactos VUE JS 3 - Diplomado USIP Full Stack
+# Practica 1 Agenda Contactos VUE JS 3 
+### Diplomado USIP Full Stack 
 
 ## Integrante:
 ```
