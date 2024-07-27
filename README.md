@@ -1,9 +1,9 @@
 # Practica contactos
 
 ## Integrante:
-'''
+```
 Luis Gonzalo Garey Tito
-'''
+```
 
 
 ## Project setup
