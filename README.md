@@ -1,4 +1,4 @@
-# Practica contactos VUE JS 3 - Diplomado usip full stack
+# Practica contactos VUE JS 3 - Diplomado USIP Full Stack
 
 ## Integrante:
 ```
@@ -23,3 +23,6 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
