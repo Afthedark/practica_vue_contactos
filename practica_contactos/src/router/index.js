@@ -7,18 +7,18 @@ const routes = [
 
 
   {
-    path: '/contacto',
+    path: '/',
     name: 'contacto',
     component: ContactoView
   },
 
+  //Se crea una nuevaruta para el componente ContactoView 
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/contacto',
+    name: 'contacto-page',
+    component: ContactoView
   },
 
- 
   {
     path: '/about',
     name: 'about',
@@ -26,12 +26,24 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  },
+
+  
+  /*
+  {
+    path: '/home',
+    name: 'home',
+    component: HomeView
+  },
+  */
+ 
+
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
 
 export default router

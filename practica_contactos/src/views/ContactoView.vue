@@ -1,6 +1,11 @@
 <template>
     <div>
         <h1>{{ titulo }}</h1>
+        <div class="filtro-container">
+            <label for="busqueda" class="filtro-label">Filtro: </label>
+            <input type="text" id="busqueda" v-model="busqueda" @input="buscaContactos">
+        </div>
+        <br>
         <table>
             <thead>
                 <tr>
@@ -35,17 +40,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(contactos, index) in contactos" :key="contactos.id">
-                    <td>{{ contactos.id }}</td>
-                    <td>{{ contactos.name }}</td>
-                    <td>{{ contactos.email }}</td>
-                    <td>{{ contactos.address }}</td>
-                    <td>{{ contactos.phone }}</td>
-                    <td>{{ contactos.country }}</td>
-                    <td>{{ contactos.city }}</td>
+                <tr v-for="(contacto, index) in contactosParaMostrar" :key="contacto.id">
+                    <td>{{ contacto.id }}</td>
+                    <td>{{ contacto.name }}</td>
+                    <td>{{ contacto.email }}</td>
+                    <td>{{ contacto.address }}</td>
+                    <td>{{ contacto.phone }}</td>
+                    <td>{{ contacto.country }}</td>
+                    <td>{{ contacto.city }}</td>
                     <td>
                         <button @click="eliminarContacto(index)">Delete</button>
-                        <button @click="editarContacto(contactos, index)">Edit</button>
+                        <button @click="editarContacto(contacto, index)">Edit</button>
                     </td>
                 </tr>
             </tbody>
@@ -53,12 +58,14 @@
     </div>
 </template>
 
+
 <script>
 export default {
     name: 'MiComponente',
     data() {
         return {
             titulo: 'Agenda de contactos',
+            busqueda: '',
             contactoNuevoObj: {
                 id: "",
                 name: "",
@@ -127,6 +134,22 @@ export default {
             ]
         }
     },
+    computed: {
+        contactosParaMostrar() {
+            if (this.busqueda) {
+                const busquedaLower = this.busqueda.toLowerCase();
+                return this.contactos.filter(contacto =>
+                    contacto.name.toLowerCase().includes(busquedaLower) ||
+                    contacto.email.toLowerCase().includes(busquedaLower) ||
+                    contacto.address.toLowerCase().includes(busquedaLower) ||
+                    contacto.phone.toLowerCase().includes(busquedaLower) ||
+                    contacto.country.toLowerCase().includes(busquedaLower) ||
+                    contacto.city.toLowerCase().includes(busquedaLower)
+                );
+            }
+            return this.contactos;
+        }
+    },
     methods: {
         guardaNuevo() {
             this.contactos.push(Object.assign({}, this.contactoNuevoObj));
@@ -165,13 +188,23 @@ export default {
                 country: "",
                 city: ""
             };
+        },
+        buscaContactos() {
+            /*
+            Este método se mantiene por compatibilidad con el clic del botón.
+
+            Ahora, el filtrado se realiza automáticamente a través de la propiedad calculada.
+            */ 
         }
     }
 }
 </script>
 
 
+
+
 <style scope>
+
 h1 {
     color: #42b983;
 }
@@ -190,5 +223,14 @@ td {
 th {
     background-color: #f2f2f2;
     text-align: left;
+}
+
+.filtro-container {
+    display: flex;
+    align-items: center;
+}
+
+.filtro-label {
+    margin-right: 10px; 
 }
 </style>

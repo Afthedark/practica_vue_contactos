@@ -1,9 +1,10 @@
 <template>
   <nav>
     <!-- -->
+    <!--<router-link to="/">Vue </router-link>| -->
     <router-link to="/contacto">Contactos</router-link>|
-    <router-link to="/about">Integrantes</router-link>|
-    <router-link to="/">Vue</router-link> 
+    <router-link to="/about">Integrante</router-link>
+    
     
     <!--<router-link to="/parqueo">Parqueo</router-link>|-->
     
