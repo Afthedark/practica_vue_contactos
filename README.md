@@ -6,6 +6,10 @@
 Luis Gonzalo Garey Tito
 ```
 
+## Enter Project
+```
+cd contactos
+```
 
 ## Project setup
 ```
